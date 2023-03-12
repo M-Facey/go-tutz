@@ -12,8 +12,12 @@ import "fmt"
 // by the go compiler
 // There must only be one `main` function
 func main() {
+	// -- LESSON #2
+	// ----------------------------------------------------------
 	fmt.Println("Hello World")
 
+	// -- LESSON #3
+	// ----------------------------------------------------------
 	// strings
 	// 1: var _name_of_variable _type = _value (explicit)
 	var nameOne string = "Mario"
@@ -53,4 +57,18 @@ func main() {
 	// the := defaults to using the float64 version
 	var scoreOne float32 = 23.4
 	fmt.Println(scoreOne)
+
+	// -- LESSON #4
+	// ----------------------------------------------------------
+	age := 12
+	fmt.Println()
+	fmt.Print("hello, ")   // this doesn't added need line
+	fmt.Print("world! \n") // this doesn't added need line
+
+	fmt.Print("without format: My age is ", age, "\n")
+	fmt.Printf("with format: My age is %v\n", age)
+
+	var formattedString = fmt.Sprintf("My age is %v", age)
+	fmt.Println("The formatted string: ", formattedString)
+
 }
