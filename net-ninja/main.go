@@ -71,4 +71,34 @@ func main() {
 	var formattedString = fmt.Sprintf("My age is %v", age)
 	fmt.Println("The formatted string: ", formattedString)
 
+	// -- LESSON #5
+	// ----------------------------------------------------------
+
+	// var _name_of_variables [_arr_length]_type = [_arr_length]int{_values}
+	var ages [3]int = [3]int{1, 2, 3}
+
+	// var _name_of_variable = [_arr_length]_type{_values}
+	var agesTwo = [3]int{4, 5, 6}
+
+	// _name_of_variable := [_arr_length]_type{_values}
+	names := [4]string{"Mary", "Samantha", "Andrew", "Phillipe"}
+	names[1] = "Alex" // this is how you can the value
+
+	fmt.Println(ages, agesTwo)
+	fmt.Println("Names: ", names, " and No. of names: ", len(names))
+
+	// SLICES (think mutatable arrays)
+	var scores = []float64{100.0, 95.3, 12.4}
+	scores[2] = 84.3
+	scores = append(scores, 4.2)
+
+	fmt.Println(scores)
+
+	rangeOne := names[1:3]
+	rangeTwo := names[1:]
+	rangeThree := names[:3]
+
+	fmt.Println(rangeOne)
+	fmt.Println(rangeTwo)
+	fmt.Println(rangeThree)
 }
