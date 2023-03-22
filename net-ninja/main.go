@@ -160,4 +160,34 @@ func main() {
 	for index, value := range namesArr {
 		fmt.Printf("The name at index %v is %v\n", index, value)
 	}
+
+	// -- LESSON #8
+	// ----------------------------------------------------------
+
+	// So for boolean expressions, they are exactly the same as in 
+	// other programming languages. Those include the following 
+	// examples: >, <, >=, <=, ==, != 
+
+	age = 30 
+
+	if age < 30 {
+		fmt.Println("age is less than 30")
+	} else if age < 40 {
+		fmt.Println("age is less than 40")
+	}
+
+	for index, value := range namesArr {
+		if index == 1 {
+			fmt.Println("continuing at index ", index)
+			continue
+		}
+
+		if index > 2 {
+			fmt.Println("breaking at index ", index)
+			break
+		}
+
+		fmt.Printf("the value at index %v is %v\n", index, value)
+	}
+
 }
