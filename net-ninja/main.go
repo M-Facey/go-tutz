@@ -8,9 +8,28 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"sort"
 	"strings"
 )
+
+func sayGreetings(n string) {
+	fmt.Printf("Good morning, %v\n", n)
+}
+
+func sayBye(n string) {
+	fmt.Printf("Goodbye, %v\n", n)
+}
+
+func cycleNames(n []string, f func(string)) {
+	for _, value := range n {
+		f(value)
+	}
+}
+
+func circleArea(r float64) float64 {
+	return math.Pi * r * r
+}
 
 // functions that are called main are triggered automatically
 // by the go compiler
@@ -189,5 +208,20 @@ func main() {
 
 		fmt.Printf("the value at index %v is %v\n", index, value)
 	}
+
+	// -- LESSON #8
+	// ----------------------------------------------------------
+
+	sayGreetings("Murphy")
+	sayBye("Murphy")
+	cycleNames(namesArr, sayGreetings)
+	a1 := circleArea(12)
+	a2 := circleArea(12.43)
+
+	fmt.Println("The first area is ",a1)
+	fmt.Println("The second area is ", a2)
+
+	fmt.Printf("The first area is %0.3f\n", a1)
+	fmt.Printf("The second area is %0.2f\n", a2)
 
 }
