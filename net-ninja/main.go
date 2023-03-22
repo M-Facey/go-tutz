@@ -129,4 +129,35 @@ func main() {
 	index := sort.SearchInts(agesArr, 21)
 	fmt.Println(index)
 
+	// -- LESSON #7
+	// ----------------------------------------------------------
+
+	x := 0
+	
+	// the for keyword is to represent all forms of loops
+	// below is an example of while loop
+	for x < 5 {
+		fmt.Println("The value of x is ", x)
+		x++
+	}
+	fmt.Println()
+
+	for i := 0; i < 5; i++ {
+		fmt.Println("The value of i is ", i)
+	}
+	fmt.Println()
+
+	namesArr := []string{"Mike", "Sam", "Mary", "Leefa", "lovely"}
+	for i := 0; i < len(namesArr); i++ {
+		fmt.Printf("The name at index %v is %v\n", i, namesArr[i])
+	}
+
+	// Please note: if you don't want to use index/value then you have
+	// replace it with an underscore (_)
+
+	// also updating the value in the for loop doesn't change the original
+	// value in the slice since it creates a local copy of the value in the slice
+	for index, value := range namesArr {
+		fmt.Printf("The name at index %v is %v\n", index, value)
+	}
 }
