@@ -6,7 +6,11 @@
 //   - ahared packages can't or well shouldn't use the `main` package name
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+	"strings"
+)
 
 // functions that are called main are triggered automatically
 // by the go compiler
@@ -101,4 +105,28 @@ func main() {
 	fmt.Println(rangeOne)
 	fmt.Println(rangeTwo)
 	fmt.Println(rangeThree)
+
+	// -- LESSON #6
+	// ----------------------------------------------------------
+
+	greetings := "hello there friends"
+	// PLease note that all the methods in strings package doesn't mutate the original string
+	fmt.Println(strings.Contains(greetings, "hello"))
+	fmt.Println(strings.ReplaceAll(greetings, "hello", "hey"))
+	fmt.Println(strings.ToUpper(greetings))
+	fmt.Println(strings.Index(greetings, "ll"))
+	fmt.Println(strings.Split(greetings, " "))
+
+	agesArr := []int{45, 20, 21, 64,8, 53, 96, 12}
+	sort.Ints(agesArr)
+	fmt.Println(agesArr)
+
+	// Please note: when it doesn't find the index, it will return n + 1
+	// where n is the number of items in the slice
+	
+	// There are also string and float version of the methods in sort 
+	// package. For example: sort.Strings(_variable_name) & sort.Floats(_variable_name)
+	index := sort.SearchInts(agesArr, 21)
+	fmt.Println(index)
+
 }
