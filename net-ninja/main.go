@@ -31,6 +31,24 @@ func circleArea(r float64) float64 {
 	return math.Pi * r * r
 }
 
+// Please note: this function was defined differently 
+// inside the tutorial and it honestly something
+// I may want to think about replicating
+func getInitials(n string) (string, string) {
+	names := strings.Split(strings.ToUpper(n), " ")
+	return names[0][:1], names[1][:1]
+}
+
+func getInitials2(n string) (string, string) {
+	names := strings.Split(strings.ToUpper(n), " ")
+	if(len(names) > 2) {
+		return "too many names.", "please try again with just 2"
+	} else if(len(names) == 1) {
+		return names[0][:1], "_"
+	}
+	return names[0][:1], names[1][:1]
+}
+
 // functions that are called main are triggered automatically
 // by the go compiler
 // There must only be one `main` function
@@ -209,7 +227,7 @@ func main() {
 		fmt.Printf("the value at index %v is %v\n", index, value)
 	}
 
-	// -- LESSON #8
+	// -- LESSON #9
 	// ----------------------------------------------------------
 
 	sayGreetings("Murphy")
@@ -224,4 +242,17 @@ func main() {
 	fmt.Printf("The first area is %0.3f\n", a1)
 	fmt.Printf("The second area is %0.2f\n", a2)
 
+	// -- LESSON #10
+	// ----------------------------------------------------------
+	firstInitial, lastInitial := getInitials("murphy facey")
+	fmt.Printf("The initials are %v. %v.\n", firstInitial, lastInitial)
+	
+	firstInitial, lastInitial = getInitials2("mark wallis")
+	fmt.Printf("The initials are %v. %v.\n", firstInitial, lastInitial)
+
+	firstInitial, lastInitial = getInitials2("peter fray junior")
+	fmt.Printf("The initials are %v. %v.\n", firstInitial, lastInitial)
+
+	firstInitial, lastInitial = getInitials2("prince")
+	fmt.Printf("The initials are %v. %v.\n", firstInitial, lastInitial)
 }
