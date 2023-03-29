@@ -255,4 +255,8 @@ func main() {
 
 	firstInitial, lastInitial = getInitials2("prince")
 	fmt.Printf("The initials are %v. %v.\n", firstInitial, lastInitial)
+
+	// -- LESSON #11
+	// ----------------------------------------------------------
+	sayHello("Murp")
 }
